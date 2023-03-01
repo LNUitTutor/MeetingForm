@@ -90,6 +90,7 @@ namespace WinFormsApp1
             this.DayListBox.Name = "DayListBox";
             this.DayListBox.Size = new System.Drawing.Size(150, 104);
             this.DayListBox.TabIndex = 2;
+            this.DayListBox.SelectedIndexChanged += new System.EventHandler(this.DayListBox_SelectedIndexChanged);
             // 
             // LessonGroupBox
             // 

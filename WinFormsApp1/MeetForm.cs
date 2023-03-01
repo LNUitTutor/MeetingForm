@@ -36,5 +36,33 @@ namespace WinFormsApp1
             MessageBox.Show(
                 $"Заплановано {MeetType} на {DayListBox.Items[DayListBox.SelectedIndex]}");
         }
+
+        private void DayListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (DayListBox.SelectedIndex)
+            {
+                case 0: case 1: case 2: case 3: case 4:
+                    LessonUpDown.Maximum = 7;
+                    TestCheckBox.Enabled = true;
+                    SeminarButton.Enabled = true;
+                    LabButton.Enabled = true;
+                    PractButton.Enabled = true;
+                    break;
+                case 5:
+                    LessonUpDown.Maximum = 3;
+                    TestCheckBox.Enabled = true;
+                    SeminarButton.Enabled = true;
+                    LabButton.Enabled = true;
+                    PractButton.Enabled = true;
+                    break;
+                case 6:
+                    LessonUpDown.Maximum = 3;
+                    TestCheckBox.Enabled = false;
+                    SeminarButton.Enabled = false;
+                    LabButton.Enabled = false;
+                    PractButton.Enabled = false;
+                    break;
+            }
+        }
     }
 }
