@@ -33,7 +33,7 @@ namespace WinFormsApp1
             this.DayGroupBox = new System.Windows.Forms.GroupBox();
             this.DayListBox = new System.Windows.Forms.ListBox();
             this.LessonGroupBox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.RoomComboBox = new System.Windows.Forms.ComboBox();
             this.LessonUpDown = new System.Windows.Forms.NumericUpDown();
             this.TypeGroupBox = new System.Windows.Forms.GroupBox();
             this.PractButton = new System.Windows.Forms.RadioButton();
@@ -44,7 +44,7 @@ namespace WinFormsApp1
             this.TestCheckBox = new System.Windows.Forms.CheckBox();
             this.OnlineCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PrereqTextBox = new System.Windows.Forms.TextBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.QuitButton = new System.Windows.Forms.Button();
             this.DayGroupBox.SuspendLayout();
@@ -94,7 +94,7 @@ namespace WinFormsApp1
             // 
             // LessonGroupBox
             // 
-            this.LessonGroupBox.Controls.Add(this.comboBox1);
+            this.LessonGroupBox.Controls.Add(this.RoomComboBox);
             this.LessonGroupBox.Controls.Add(this.LessonUpDown);
             this.LessonGroupBox.Location = new System.Drawing.Point(181, 54);
             this.LessonGroupBox.Name = "LessonGroupBox";
@@ -103,19 +103,20 @@ namespace WinFormsApp1
             this.LessonGroupBox.TabStop = false;
             this.LessonGroupBox.Text = "Оберіть пару і авдиторію";
             // 
-            // comboBox1
+            // RoomComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.RoomComboBox.FormattingEnabled = true;
+            this.RoomComboBox.Items.AddRange(new object[] {
             "146",
             "216",
             "220",
             "379",
             "439"});
-            this.comboBox1.Location = new System.Drawing.Point(0, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 1;
+            this.RoomComboBox.Location = new System.Drawing.Point(0, 102);
+            this.RoomComboBox.Name = "RoomComboBox";
+            this.RoomComboBox.Size = new System.Drawing.Size(151, 28);
+            this.RoomComboBox.TabIndex = 1;
+            this.RoomComboBox.Text = "216";
             // 
             // LessonUpDown
             // 
@@ -238,12 +239,13 @@ namespace WinFormsApp1
             this.label1.TabIndex = 5;
             this.label1.Text = "Попередні вимоги";
             // 
-            // textBox1
+            // PrereqTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(668, 27);
-            this.textBox1.TabIndex = 6;
+            this.PrereqTextBox.Location = new System.Drawing.Point(14, 246);
+            this.PrereqTextBox.Name = "PrereqTextBox";
+            this.PrereqTextBox.Size = new System.Drawing.Size(668, 27);
+            this.PrereqTextBox.TabIndex = 6;
+            this.PrereqTextBox.Leave += new System.EventHandler(this.PrereqTextBox_Leave);
             // 
             // OkButton
             // 
@@ -273,7 +275,7 @@ namespace WinFormsApp1
             this.ClientSize = new System.Drawing.Size(693, 343);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.OkButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PrereqTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AdditionalGroupBox);
             this.Controls.Add(this.TypeGroupBox);
@@ -308,12 +310,12 @@ namespace WinFormsApp1
         private System.Windows.Forms.RadioButton SeminarButton;
         private System.Windows.Forms.RadioButton LectureButton;
         private System.Windows.Forms.RadioButton PractButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox RoomComboBox;
         private System.Windows.Forms.GroupBox AdditionalGroupBox;
         private System.Windows.Forms.CheckBox TestCheckBox;
         private System.Windows.Forms.CheckBox OnlineCheckBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PrereqTextBox;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button QuitButton;
     }

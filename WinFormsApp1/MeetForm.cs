@@ -13,6 +13,7 @@ namespace WinFormsApp1
     public partial class MeetForm : Form
     {
         private string MeetType = "Лекція";
+        private string Addition = string.Empty;
         public MeetForm()
         {
             InitializeComponent();
@@ -33,8 +34,25 @@ namespace WinFormsApp1
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"Заплановано {MeetType} на {DayListBox.Items[DayListBox.SelectedIndex]}");
+            string answer = string.Format(
+                " Заплановано {0} на {1},\nпара #{2} в ауд. {3}",
+                MeetType, DayListBox.Items[DayListBox.SelectedIndex],
+                LessonUpDown.Value, RoomComboBox.Text);
+            if (OnlineCheckBox.Checked)
+            {
+                answer += "\nЗаняття транслюватиметься онлайн";
+            }
+            if (TestCheckBox.Checked)
+            {
+                answer += "\nНа занятті може бути контрольна";
+            }
+            if (Addition != string.Empty)
+            {
+                answer += "\n\nДодаткові вимоги: " + Addition;
+            }
+
+            MessageBox.Show(answer, "Заняття",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DayListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +81,11 @@ namespace WinFormsApp1
                     PractButton.Enabled = false;
                     break;
             }
+        }
+
+        private void PrereqTextBox_Leave(object sender, EventArgs e)
+        {
+            Addition = (sender as TextBox).Text;
         }
     }
 }
