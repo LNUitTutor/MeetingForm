@@ -160,6 +160,7 @@ namespace WinFormsApp1
             this.PractButton.TabIndex = 4;
             this.PractButton.Text = "Практичне";
             this.PractButton.UseVisualStyleBackColor = true;
+            this.PractButton.CheckedChanged += new System.EventHandler(this.LectureButton_CheckedChanged);
             // 
             // LabButton
             // 
@@ -170,6 +171,7 @@ namespace WinFormsApp1
             this.LabButton.TabIndex = 2;
             this.LabButton.Text = "Лабораторна";
             this.LabButton.UseVisualStyleBackColor = true;
+            this.LabButton.CheckedChanged += new System.EventHandler(this.LectureButton_CheckedChanged);
             // 
             // SeminarButton
             // 
@@ -180,6 +182,7 @@ namespace WinFormsApp1
             this.SeminarButton.TabIndex = 1;
             this.SeminarButton.Text = "Семінар";
             this.SeminarButton.UseVisualStyleBackColor = true;
+            this.SeminarButton.CheckedChanged += new System.EventHandler(this.LectureButton_CheckedChanged);
             // 
             // LectureButton
             // 
@@ -192,6 +195,7 @@ namespace WinFormsApp1
             this.LectureButton.TabStop = true;
             this.LectureButton.Text = "Лекція";
             this.LectureButton.UseVisualStyleBackColor = true;
+            this.LectureButton.CheckedChanged += new System.EventHandler(this.LectureButton_CheckedChanged);
             // 
             // AdditionalGroupBox
             // 
@@ -248,6 +252,7 @@ namespace WinFormsApp1
             this.OkButton.TabIndex = 7;
             this.OkButton.Text = "Гаразд";
             this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // QuitButton
             // 
