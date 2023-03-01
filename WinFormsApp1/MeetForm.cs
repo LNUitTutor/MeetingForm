@@ -17,5 +17,9 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

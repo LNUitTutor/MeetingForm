@@ -33,16 +33,25 @@ namespace WinFormsApp1
             this.DayGroupBox = new System.Windows.Forms.GroupBox();
             this.DayListBox = new System.Windows.Forms.ListBox();
             this.LessonGroupBox = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.LessonUpDown = new System.Windows.Forms.NumericUpDown();
             this.TypeGroupBox = new System.Windows.Forms.GroupBox();
+            this.PractButton = new System.Windows.Forms.RadioButton();
             this.LabButton = new System.Windows.Forms.RadioButton();
             this.SeminarButton = new System.Windows.Forms.RadioButton();
             this.LectureButton = new System.Windows.Forms.RadioButton();
-            this.PractButton = new System.Windows.Forms.RadioButton();
+            this.AdditionalGroupBox = new System.Windows.Forms.GroupBox();
+            this.TestCheckBox = new System.Windows.Forms.CheckBox();
+            this.OnlineCheckBox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.OkButton = new System.Windows.Forms.Button();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.DayGroupBox.SuspendLayout();
             this.LessonGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LessonUpDown)).BeginInit();
             this.TypeGroupBox.SuspendLayout();
+            this.AdditionalGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExplanationLabel
@@ -84,13 +93,28 @@ namespace WinFormsApp1
             // 
             // LessonGroupBox
             // 
+            this.LessonGroupBox.Controls.Add(this.comboBox1);
             this.LessonGroupBox.Controls.Add(this.LessonUpDown);
             this.LessonGroupBox.Location = new System.Drawing.Point(181, 54);
             this.LessonGroupBox.Name = "LessonGroupBox";
             this.LessonGroupBox.Size = new System.Drawing.Size(163, 148);
             this.LessonGroupBox.TabIndex = 2;
             this.LessonGroupBox.TabStop = false;
-            this.LessonGroupBox.Text = "Оберіть пару";
+            this.LessonGroupBox.Text = "Оберіть пару і авдиторію";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "146",
+            "216",
+            "220",
+            "379",
+            "439"});
+            this.comboBox1.Location = new System.Drawing.Point(0, 102);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 1;
             // 
             // LessonUpDown
             // 
@@ -127,6 +151,16 @@ namespace WinFormsApp1
             this.TypeGroupBox.TabStop = false;
             this.TypeGroupBox.Text = "Задайте вид заняття";
             // 
+            // PractButton
+            // 
+            this.PractButton.AutoSize = true;
+            this.PractButton.Location = new System.Drawing.Point(6, 114);
+            this.PractButton.Name = "PractButton";
+            this.PractButton.Size = new System.Drawing.Size(105, 24);
+            this.PractButton.TabIndex = 4;
+            this.PractButton.Text = "Практичне";
+            this.PractButton.UseVisualStyleBackColor = true;
+            // 
             // LabButton
             // 
             this.LabButton.AutoSize = true;
@@ -134,7 +168,6 @@ namespace WinFormsApp1
             this.LabButton.Name = "LabButton";
             this.LabButton.Size = new System.Drawing.Size(124, 24);
             this.LabButton.TabIndex = 2;
-            this.LabButton.TabStop = true;
             this.LabButton.Text = "Лабораторна";
             this.LabButton.UseVisualStyleBackColor = true;
             // 
@@ -145,13 +178,13 @@ namespace WinFormsApp1
             this.SeminarButton.Name = "SeminarButton";
             this.SeminarButton.Size = new System.Drawing.Size(88, 24);
             this.SeminarButton.TabIndex = 1;
-            this.SeminarButton.TabStop = true;
             this.SeminarButton.Text = "Семінар";
             this.SeminarButton.UseVisualStyleBackColor = true;
             // 
             // LectureButton
             // 
             this.LectureButton.AutoSize = true;
+            this.LectureButton.Checked = true;
             this.LectureButton.Location = new System.Drawing.Point(6, 24);
             this.LectureButton.Name = "LectureButton";
             this.LectureButton.Size = new System.Drawing.Size(76, 24);
@@ -160,26 +193,89 @@ namespace WinFormsApp1
             this.LectureButton.Text = "Лекція";
             this.LectureButton.UseVisualStyleBackColor = true;
             // 
-            // PractButton
+            // AdditionalGroupBox
             // 
-            this.PractButton.AutoSize = true;
-            this.PractButton.Location = new System.Drawing.Point(6, 114);
-            this.PractButton.Name = "PractButton";
-            this.PractButton.Size = new System.Drawing.Size(105, 24);
-            this.PractButton.TabIndex = 4;
-            this.PractButton.TabStop = true;
-            this.PractButton.Text = "Практичне";
-            this.PractButton.UseVisualStyleBackColor = true;
+            this.AdditionalGroupBox.Controls.Add(this.TestCheckBox);
+            this.AdditionalGroupBox.Controls.Add(this.OnlineCheckBox);
+            this.AdditionalGroupBox.Location = new System.Drawing.Point(519, 54);
+            this.AdditionalGroupBox.Name = "AdditionalGroupBox";
+            this.AdditionalGroupBox.Size = new System.Drawing.Size(163, 148);
+            this.AdditionalGroupBox.TabIndex = 4;
+            this.AdditionalGroupBox.TabStop = false;
+            this.AdditionalGroupBox.Text = "Додатково";
+            // 
+            // TestCheckBox
+            // 
+            this.TestCheckBox.AutoSize = true;
+            this.TestCheckBox.Location = new System.Drawing.Point(18, 84);
+            this.TestCheckBox.Name = "TestCheckBox";
+            this.TestCheckBox.Size = new System.Drawing.Size(98, 24);
+            this.TestCheckBox.TabIndex = 1;
+            this.TestCheckBox.Text = "Контроль";
+            this.TestCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // OnlineCheckBox
+            // 
+            this.OnlineCheckBox.AutoSize = true;
+            this.OnlineCheckBox.Location = new System.Drawing.Point(18, 38);
+            this.OnlineCheckBox.Name = "OnlineCheckBox";
+            this.OnlineCheckBox.Size = new System.Drawing.Size(85, 24);
+            this.OnlineCheckBox.TabIndex = 0;
+            this.OnlineCheckBox.Text = "Онлайн";
+            this.OnlineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Попередні вимоги";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(14, 246);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(668, 27);
+            this.textBox1.TabIndex = 6;
+            // 
+            // OkButton
+            // 
+            this.OkButton.Location = new System.Drawing.Point(226, 295);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(94, 29);
+            this.OkButton.TabIndex = 7;
+            this.OkButton.Text = "Гаразд";
+            this.OkButton.UseVisualStyleBackColor = true;
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.Location = new System.Drawing.Point(351, 295);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(94, 29);
+            this.QuitButton.TabIndex = 8;
+            this.QuitButton.Text = "Завершити";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // MeetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.CancelButton = this.QuitButton;
+            this.ClientSize = new System.Drawing.Size(693, 343);
+            this.Controls.Add(this.QuitButton);
+            this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AdditionalGroupBox);
             this.Controls.Add(this.TypeGroupBox);
             this.Controls.Add(this.LessonGroupBox);
             this.Controls.Add(this.DayGroupBox);
             this.Controls.Add(this.ExplanationLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MeetForm";
             this.Text = "Планування заняття";
             this.DayGroupBox.ResumeLayout(false);
@@ -187,6 +283,8 @@ namespace WinFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.LessonUpDown)).EndInit();
             this.TypeGroupBox.ResumeLayout(false);
             this.TypeGroupBox.PerformLayout();
+            this.AdditionalGroupBox.ResumeLayout(false);
+            this.AdditionalGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +302,14 @@ namespace WinFormsApp1
         private System.Windows.Forms.RadioButton SeminarButton;
         private System.Windows.Forms.RadioButton LectureButton;
         private System.Windows.Forms.RadioButton PractButton;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox AdditionalGroupBox;
+        private System.Windows.Forms.CheckBox TestCheckBox;
+        private System.Windows.Forms.CheckBox OnlineCheckBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Button QuitButton;
     }
 }
 
